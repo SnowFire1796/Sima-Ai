@@ -2,16 +2,18 @@
 
 Sima is a symbolic, knowledge-centric engine. Language-specific labels resolve to language-independent concept IDs.
 
-## Data flow
+## Processing pipeline
 
-1. **Text layer** — UTF-8 validation, normalization, tokenization, coarse language detection.
-2. **Concept store** — canonical concepts and aliases.
-3. **Dataset reader** — bounded line-by-line ingestion and diagnostics.
+1. **Input and language** — UTF-8 validation, normalization, tokenization, and coarse language/script detection.
+2. **Concept store** — canonical concepts and multilingual aliases.
+3. **Dataset reader** — bounded line-by-line ingestion, escape parsing, and diagnostics.
 4. **Knowledge base** — subject–relation–object facts, provenance, confidence, and subject index.
 5. **Reasoner** — explicit transitive rules and explainable paths.
 6. **Retrieval** — inverted term index over labels, relations, and source metadata.
-7. **Answer layer** — evidence-first retrieval responses.
-8. **Persistence** — versioned binary snapshots with bounds checks.
+7. **Evaluation** — lexical evidence coverage heuristic; this is not semantic truth verification.
+8. **Generation** — conservative formatting of retrieved evidence, not free-form language synthesis.
+9. **Memory** — bounded in-process session history; it is not persisted in the knowledge snapshot.
+10. **Persistence** — versioned binary snapshots with bounds checks.
 
 ## Invariants
 
@@ -21,14 +23,16 @@ Sima is a symbolic, knowledge-centric engine. Language-specific labels resolve t
 - Pointers returned by `ask` remain valid only until the knowledge base mutates.
 - Loading validates a temporary candidate before replacing active state.
 - Derived facts are computed on demand and are not silently persisted as source facts.
+- Session memory is bounded and disappears when the process exits.
 
 ## Complexity
 
 - Alias lookup: expected O(1).
 - Subject lookup: expected O(k) for matching subject postings.
+- Fact insertion: expected O(1) index update after duplicate lookup.
 - Retrieval: proportional to query postings plus ranking.
-- The initial transitive reasoner uses breadth-first traversal from each source concept. Large dense graphs can still be expensive; inference output is capped.
+- Transitive reasoning: breadth-first traversal from each source concept; dense graphs can still be expensive, so inference output is capped.
 
 ## Symbolic boundary
 
-Sima stores explicit records and applies explicit algorithms. It does not learn statistical language representations or acquire broad world knowledge merely by reading arbitrary text. The extractor in this version is intentionally schema-driven: it ingests structured facts rather than pretending to reliably extract arbitrary natural-language statements.
+Sima stores explicit records and applies explicit algorithms. It does not learn statistical language representations or acquire broad world knowledge merely by reading arbitrary text. The current trainer ingests structured FACT, WORD, and RULE records; it does not pretend to reliably extract arbitrary prose.

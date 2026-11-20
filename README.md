@@ -2,25 +2,27 @@
 
 A deterministic, knowledge-driven bilingual AI engine written in standard C++. Sima deliberately uses **no neural networks, model weights, tensor libraries, Python runtime, or third-party runtime dependencies**.
 
-The initial release provides a working symbolic foundation: text normalization, language-independent concept IDs, multilingual aliases, structured facts, rule-based inference, dataset ingestion, indexed retrieval, evidence explanations, and binary persistence.
+The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, dataset ingestion, indexed retrieval, evidence evaluation, answer composition, bounded session memory, and binary persistence.
 
 > Sima is not an LLM. It does not claim unrestricted language understanding. It reasons over the facts and rules supplied to it and reports when evidence is missing.
 
 ## Features
 
 - C++20 baseline; C++26-ready; standard library only.
-- UTF-8 validation, basic Persian/Arabic character normalization, tokenization, coarse language detection.
+- UTF-8 validation, basic Persian/Arabic character normalization, tokenization, and coarse script detection.
 - Shared concepts across languages through aliases (for example, `Dog` and `سگ`).
 - Subject–relation–object facts with source, confidence, and origin metadata.
-- Bounded, line-by-line dataset reader with per-line diagnostics.
-- Explicit transitive inference rules and path explanations.
+- Bounded, line-by-line dataset reader with diagnostics and escaped delimiters.
+- Explicit transitive inference rules and evidence-path explanations.
 - Inverted retrieval index with deterministic result ordering.
-- Versioned little-endian binary snapshots and validated loading.
-- Console interface and automated tests.
+- Evidence coverage evaluation and conservative answer composition.
+- Bounded short-term session memory with recent-history and lexical recall APIs.
+- Versioned little-endian binary snapshots and transactional validated loading.
+- Console interface, CMake build, and automated tests.
 
 ## Build
 
-Requirements: CMake 3.20+ and a C++20 compiler. The implementation intentionally uses the C++20 standard-library subset for broad compiler compatibility.
+Requirements: CMake 3.20+ and a C++20 compiler. The implementation uses the C++20 standard-library subset for broad compiler compatibility.
 
 ```sh
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -33,7 +35,8 @@ Direct build:
 ```sh
 g++ -std=c++20 -O2 -Wall -Wextra -Wpedantic -Iinclude \
   src/main.cpp src/text.cpp src/storage.cpp src/dataset.cpp \
-  src/reasoner.cpp src/retrieval.cpp src/engine.cpp -o sima
+  src/reasoner.cpp src/retrieval.cpp src/generation.cpp \
+  src/evaluation.cpp src/memory.cpp src/engine.cpp -o sima
 ```
 
 ## Quick start
@@ -50,6 +53,7 @@ stats
 ask Earth IsA
 query planet sun
 why Dog IsA Animal
+memory
 save storage/knowledge.sima
 exit
 ```
@@ -70,7 +74,7 @@ RULE|IsA|TRANSITIVE
 - `WORD|alias|canonical-concept`
 - `RULE|relation|TRANSITIVE`
 
-Escaping: `\\|` means a literal pipe and `\\\\` means a literal backslash. The default maximum line length is 1 MiB. Malformed lines are reported and skipped rather than aborting the complete training run.
+Escaping: `\\|` means a literal pipe and `\\\\` means a literal backslash. The default maximum line length is 1 MiB. Invalid UTF-8 and malformed records are reported and skipped.
 
 Only a tiny illustrative sample is included. Add your own licensed corpora; dataset collection and licensing are intentionally outside this implementation task.
 
@@ -80,9 +84,10 @@ Only a tiny illustrative sample is included. Add your own licensed corpora; data
 |---|---|
 | `train <file>` | Ingest a dataset |
 | `ask <subject> <relation>` | Find direct facts |
-| `query <text>` | Retrieve matching evidence |
+| `query <text>` | Retrieve and evaluate matching evidence |
 | `why <subject> <relation> <object>` | Explain a direct or inferred path |
 | `list [limit]` | List stored facts |
+| `memory [limit]` | Show recent session memories |
 | `stats` | Show counts and index size |
 | `save [file]` | Save a binary snapshot |
 | `load [file]` | Load a binary snapshot |
