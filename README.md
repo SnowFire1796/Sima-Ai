@@ -2,7 +2,7 @@
 
 A deterministic, knowledge-driven bilingual AI engine written in standard C++. Sima deliberately uses **no neural networks, model weights, tensor libraries, Python runtime, or third-party runtime dependencies**.
 
-The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, dataset ingestion, indexed retrieval, evidence evaluation, answer composition, bounded session memory, and binary persistence.
+The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, single-file and directory dataset ingestion, indexed retrieval, evidence evaluation, answer composition, bounded session memory, and binary persistence.
 
 > Sima is not an LLM. It does not claim unrestricted language understanding. It reasons over the facts and rules supplied to it and reports when evidence is missing.
 
@@ -13,6 +13,7 @@ The first release provides a symbolic foundation: UTF-8 text handling, language-
 - Shared concepts across languages through aliases (for example, `Dog` and `سگ`).
 - Subject–relation–object facts with source, confidence, and origin metadata.
 - Bounded, line-by-line dataset reader with diagnostics and escaped delimiters.
+- Recursive directory training for `.sima` and `.txt` datasets.
 - Explicit transitive inference rules and evidence-path explanations.
 - Inverted retrieval index with deterministic result ordering.
 - Evidence coverage evaluation and conservative answer composition.
@@ -34,7 +35,7 @@ Direct build:
 
 ```sh
 g++ -std=c++20 -O2 -Wall -Wextra -Wpedantic -Iinclude \
-  src/main.cpp src/text.cpp src/storage.cpp src/dataset.cpp \
+  src/main.cpp src/text.cpp src/storage.cpp src/dataset.cpp src/learning.cpp \
   src/reasoner.cpp src/retrieval.cpp src/generation.cpp \
   src/evaluation.cpp src/memory.cpp src/engine.cpp -o sima
 ```
@@ -48,7 +49,7 @@ g++ -std=c++20 -O2 -Wall -Wextra -Wpedantic -Iinclude \
 Example session:
 
 ```text
-train datasets/examples/core.sima
+train datasets/examples
 stats
 ask Earth IsA
 query planet sun
@@ -76,7 +77,7 @@ RULE|IsA|TRANSITIVE
 - `WORD|alias|canonical-concept`
 - `RULE|relation|TRANSITIVE`
 
-Escaping: `\\|` means a literal pipe and `\\\\` means a literal backslash. The default maximum line length is 1 MiB. Invalid UTF-8 and malformed records are reported and skipped.
+Escaping: `\\|` means a literal pipe and `\\\\` means a literal backslash. The default maximum line length is 1 MiB. Invalid UTF-8 and malformed records are reported and skipped. Directory training recursively processes `.sima` and `.txt` files.
 
 Only a tiny illustrative sample is included. Add your own licensed corpora; dataset collection and licensing are intentionally outside this implementation task.
 
@@ -84,7 +85,7 @@ Only a tiny illustrative sample is included. Add your own licensed corpora; data
 
 | Command | Purpose |
 |---|---|
-| `train <file>` | Ingest a dataset |
+| `train <file-or-directory>` | Ingest one dataset or recursively scan a directory |
 | `ask <subject> <relation>` | Find direct facts |
 | `query <text>` | Retrieve and evaluate matching evidence |
 | `infer [limit]` | Compute explicit rule-based consequences |

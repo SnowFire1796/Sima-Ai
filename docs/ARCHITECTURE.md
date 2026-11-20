@@ -4,16 +4,16 @@ Sima is a symbolic, knowledge-centric engine. Language-specific labels resolve t
 
 ## Processing pipeline
 
-1. **Input and language** — UTF-8 validation, normalization, tokenization, and coarse language/script detection.
+1. **Input and language** — UTF-8 validation, normalization, tokenization, and coarse script detection.
 2. **Concept store** — canonical concepts and multilingual aliases.
-3. **Dataset reader** — bounded line-by-line ingestion, escape parsing, and diagnostics.
+3. **Learning** — stream one dataset at a time from a file or recursively scanned directory; report per-file and per-line diagnostics.
 4. **Knowledge base** — subject–relation–object facts, provenance, confidence, and subject index.
-5. **Reasoner** — explicit transitive rules and explainable paths.
+5. **Reasoner** — explicit transitive rules, deterministic breadth-first closure, and evidence-path explanations.
 6. **Retrieval** — inverted term index over labels, relations, and source metadata.
 7. **Evaluation** — lexical evidence coverage heuristic; this is not semantic truth verification.
 8. **Generation** — conservative formatting of retrieved evidence, not free-form language synthesis.
 9. **Memory** — bounded in-process session history; it is not persisted in the knowledge snapshot.
-10. **Persistence** — versioned binary snapshots with bounds checks.
+10. **Persistence** — versioned binary snapshots with bounds checks and deterministic concept ordering.
 
 ## Invariants
 

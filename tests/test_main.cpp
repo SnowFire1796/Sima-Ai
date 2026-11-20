@@ -2,6 +2,7 @@
 #include "sima/language_engine.hpp"
 #include "sima/text.hpp"
 #include <filesystem>
+#include <fstream>
 #include <iostream>
 #include <stdexcept>
 namespace {int checks=0;void check(bool ok,const char*message){++checks;if(!ok)throw std::runtime_error(message);}}
@@ -23,7 +24,8 @@ int main(){try{
  const auto answer=engine.query("Dog Animal");check(answer.sufficient&&!answer.evidence.empty(),"evidence-backed retrieval");check(engine.memory().size()==1,"session memory records query");
  sima::MemoryEngine memory(2);memory.remember("first question","first answer");memory.remember("second question","second answer");memory.remember("third question","third answer");check(memory.size()==2,"memory capacity bound");check(memory.recent(1).front().input=="third question","recent memory ordering");check(memory.search("third").size()==1,"memory lexical recall");
  sima::KnowledgeBase escaped;const auto escaped_report=sima::DatasetReader::train_text("FACT|A\\|B|RelatedTo|C\n",escaped);check(escaped_report.facts_added==1,"escaped separator parsed");check(escaped.concepts.resolve("A|B")!=0,"escaped field preserved");
- sima::KnowledgeBase no_rule;auto a=no_rule.concepts.ensure("A"),b=no_rule.concepts.ensure("B"),c=no_rule.concepts.ensure("C");no_rule.add_fact({a,"A","Link",b,"B","test",1.0,sima::FactOrigin::Dataset,0});no_rule.add_fact({b,"B","Link",c,"C","test",1.0,sima::FactOrigin::Dataset,0});std::vector<sima::Fact>unsupported;check(!sima::Reasoner(no_rule).explain(a,"Link",c,unsupported),"no implicit transitivity without rule");
- auto file=std::filesystem::temp_directory_path()/"sima-test.sima";std::string error;check(engine.save(file,error),"binary save");sima::SimaEngine restored;check(restored.load(file,error),"binary load");check(restored.stats().facts==2,"round-trip fact count");check(restored.knowledge().concepts.resolve("سگ")!=0,"round-trip aliases");check(!restored.load(file.string()+".missing",error),"failed load rejected");check(restored.stats().facts==2,"failed load preserves active knowledge");std::filesystem::remove(file);
+ sima::KnowledgeBase no_rule;const auto a=no_rule.concepts.ensure("A"),b=no_rule.concepts.ensure("B"),c=no_rule.concepts.ensure("C");no_rule.add_fact({a,"A","Link",b,"B","test",1.0,sima::FactOrigin::Dataset,0});no_rule.add_fact({b,"B","Link",c,"C","test",1.0,sima::FactOrigin::Dataset,0});std::vector<sima::Fact>unsupported;check(!sima::Reasoner(no_rule).explain(a,"Link",c,unsupported),"no implicit transitivity without rule");
+ const auto folder=std::filesystem::temp_directory_path()/"sima-dataset-test";std::filesystem::create_directories(folder);{std::ofstream sample(folder/"batch.sima");sample<<"FACT|BatchSubject|ConnectedTo|BatchObject\n";}sima::KnowledgeBase batch;const auto batch_report=sima::LearningEngine{}.train_path(folder,batch);check(batch_report.facts_added==1,"directory dataset training");std::filesystem::remove_all(folder);
+ const auto file=std::filesystem::temp_directory_path()/"sima-test.sima";std::string error;check(engine.save(file,error),"binary save");sima::SimaEngine restored;check(restored.load(file,error),"binary load");check(restored.stats().facts==2,"round-trip fact count");check(restored.knowledge().concepts.resolve("سگ")!=0,"round-trip aliases");check(!restored.load(file.string()+".missing",error),"failed load rejected");check(restored.stats().facts==2,"failed load preserves active knowledge");std::filesystem::remove(file);
  std::cout<<"All "<<checks<<" checks passed.\n";return 0;
  }catch(const std::exception&e){std::cerr<<"TEST FAILURE: "<<e.what()<<"\n";return 1;}}

@@ -2,6 +2,7 @@
 #include "sima/dataset.hpp"
 #include "sima/evaluation.hpp"
 #include "sima/generation.hpp"
+#include "sima/learning.hpp"
 #include "sima/memory.hpp"
 #include "sima/reasoner.hpp"
 #include "sima/retrieval.hpp"
@@ -23,7 +24,12 @@ public:
  void remember(std::string input,std::string response){memory_.remember(std::move(input),std::move(response));}
  void rebuild();
 private:
- KnowledgeBase knowledge_;RetrievalIndex index_;GenerationEngine generator_;EvaluationEngine evaluator_;MemoryEngine memory_;
+ KnowledgeBase knowledge_;
+ LearningEngine learner_;
+ RetrievalIndex index_;
+ GenerationEngine generator_;
+ EvaluationEngine evaluator_;
+ MemoryEngine memory_;
 };
 std::string format_fact(const Fact&);
 }
