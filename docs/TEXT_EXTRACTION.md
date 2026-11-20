@@ -6,10 +6,12 @@ Files ending in `.txt` are processed by the deterministic template extractor. Fi
 
 - `Earth is a planet.` → `Earth --IsA--> planet`
 - `The Sun is a star.` → `Sun --IsA--> star`
-- `Earth orbits the Sun.` → `Earth --Orbits--> the sun`
-- `A dog has a tail.` → `dog --Has--> a tail`
+- `Earth orbits the Sun.` → `Earth --Orbits--> sun`
+- `A dog has a tail.` → `dog --Has--> tail`
 - `Paris is located in France.` → `paris --LocatedIn--> france`
-- `A wheel is part of a car.` → `wheel --PartOf--> a car`
+- `Water is in the ocean.` → `water --LocatedIn--> ocean`
+- `A wheel is part of a car.` → `wheel --PartOf--> car`
+- `Dogs are mammals.` → `dogs --IsA--> mammals`
 
 ## Supported Persian patterns
 
