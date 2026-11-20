@@ -1,6 +1,9 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.25)
 project(SimaAI VERSION 0.1.0 LANGUAGES CXX)
 option(SIMA_BUILD_TESTS "Build tests" ON)
+set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(sima_core
     src/text.cpp
     src/storage.cpp
@@ -14,8 +17,7 @@ add_library(sima_core
     src/engine.cpp
 )
 target_include_directories(sima_core PUBLIC include)
-target_compile_features(sima_core PUBLIC cxx_std_20)
-set_target_properties(sima_core PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_features(sima_core PUBLIC cxx_std_26)
 if(MSVC)
     target_compile_options(sima_core PRIVATE /W4 /permissive-)
 else()

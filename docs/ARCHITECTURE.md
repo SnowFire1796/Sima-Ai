@@ -1,6 +1,6 @@
 # Architecture
 
-Sima is a symbolic, knowledge-centric engine. Language-specific labels resolve to language-independent concept IDs.
+Sima is a symbolic, knowledge-centric engine implemented in C++26. Language-specific labels resolve to language-independent concept IDs.
 
 ## Processing pipeline
 

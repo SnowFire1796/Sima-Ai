@@ -1,6 +1,6 @@
 # Sima AI
 
-A deterministic, knowledge-driven bilingual AI engine written in standard C++. Sima deliberately uses **no neural networks, model weights, tensor libraries, Python runtime, or third-party runtime dependencies**.
+A deterministic, knowledge-driven bilingual AI engine written in **standard C++26**. Sima deliberately uses **no neural networks, model weights, tensor libraries, Python runtime, or third-party runtime dependencies**.
 
 The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, single-file and directory dataset ingestion, indexed retrieval, evidence evaluation, answer composition, bounded session memory, and binary persistence.
 
@@ -8,7 +8,7 @@ The first release provides a symbolic foundation: UTF-8 text handling, language-
 
 ## Features
 
-- C++20 baseline; C++26-ready; standard library only.
+- C++26 language mode; standard library only.
 - UTF-8 validation, basic Persian/Arabic character normalization, tokenization, and coarse script detection.
 - Shared concepts across languages through aliases (for example, `Dog` and `سگ`).
 - Subject–relation–object facts with source, confidence, and origin metadata.
@@ -23,7 +23,7 @@ The first release provides a symbolic foundation: UTF-8 text handling, language-
 
 ## Build
 
-Requirements: CMake 3.20+ and a C++20 compiler. The implementation uses the C++20 standard-library subset for broad compiler compatibility.
+Requirements: CMake 3.25+ and a C++26 compiler.
 
 ```sh
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -34,7 +34,7 @@ ctest --test-dir build --output-on-failure
 Direct build:
 
 ```sh
-g++ -std=c++20 -O2 -Wall -Wextra -Wpedantic -Iinclude \
+g++ -std=c++26 -O2 -Wall -Wextra -Wpedantic -Iinclude \
   src/main.cpp src/text.cpp src/storage.cpp src/dataset.cpp src/learning.cpp \
   src/reasoner.cpp src/retrieval.cpp src/generation.cpp \
   src/evaluation.cpp src/memory.cpp src/engine.cpp -o sima
