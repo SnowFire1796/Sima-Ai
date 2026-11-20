@@ -2,7 +2,7 @@
 
 A deterministic, knowledge-driven bilingual AI engine written in **standard C++26**. Sima deliberately uses **no neural networks, model weights, tensor libraries, Python runtime, or third-party runtime dependencies**.
 
-The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, deterministic template-based extraction from supported English and Persian prose, exact-match Q/A retrieval, recursive dataset ingestion, indexed retrieval, evidence evaluation, bounded session memory, and binary persistence.
+The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, deterministic template-based extraction from supported English and Persian prose, exact-match Q/A retrieval, recursive dataset ingestion, alias-aware indexed retrieval, evidence evaluation, bounded session memory, and binary persistence.
 
 > Sima is not an LLM. It does not claim unrestricted language understanding. It reasons over the facts, rules, and response pairs supplied to it and reports when evidence is missing.
 
@@ -48,6 +48,8 @@ g++ -std=c++26 -O2 -Wall -Wextra -Wpedantic -Iinclude \
 ```sh
 ./build/release/sima
 ```
+
+Sima automatically attempts to load `storage/knowledge.sima` on startup when that snapshot exists. Save to that default path to make the knowledge available in later sessions.
 
 Example session:
 
