@@ -2,7 +2,7 @@
 
 A deterministic, knowledge-driven bilingual AI engine written in **standard C++26**. Sima deliberately uses **no neural networks, model weights, tensor libraries, Python runtime, or third-party runtime dependencies**.
 
-The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, single-file and directory dataset ingestion, indexed retrieval, evidence evaluation, answer composition, bounded session memory, and binary persistence.
+The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, deterministic template-based extraction from supported English and Persian prose, recursive dataset ingestion, indexed retrieval, evidence evaluation, answer composition, bounded session memory, and binary persistence.
 
 > Sima is not an LLM. It does not claim unrestricted language understanding. It reasons over the facts and rules supplied to it and reports when evidence is missing.
 
@@ -14,6 +14,7 @@ The first release provides a symbolic foundation: UTF-8 text handling, language-
 - Subject–relation–object facts with source, confidence, and origin metadata.
 - Bounded, line-by-line dataset reader with diagnostics and escaped delimiters.
 - Recursive directory training for `.sima` and `.txt` datasets.
+- Rule-based English and Persian sentence templates for common relations.
 - Explicit transitive inference rules and evidence-path explanations.
 - Inverted retrieval index with deterministic result ordering.
 - Evidence coverage evaluation and conservative answer composition.
@@ -35,7 +36,7 @@ Direct build:
 
 ```sh
 g++ -std=c++26 -O2 -Wall -Wextra -Wpedantic -Iinclude \
-  src/main.cpp src/text.cpp src/storage.cpp src/dataset.cpp src/learning.cpp \
+  src/main.cpp src/text.cpp src/storage.cpp src/dataset.cpp src/extractor.cpp src/learning.cpp \
   src/reasoner.cpp src/retrieval.cpp src/generation.cpp \
   src/evaluation.cpp src/memory.cpp src/engine.cpp -o sima
 ```
@@ -61,9 +62,11 @@ save storage/knowledge.sima
 exit
 ```
 
-## Dataset format
+## Dataset formats
 
-Datasets are UTF-8 text files, one record per line. Blank lines and lines beginning with `#` are ignored.
+Datasets are UTF-8 text files. `.sima` files use explicit records; `.txt` files can contain supported prose templates or explicit records. Blank lines and lines beginning with `#` are ignored.
+
+Structured records:
 
 ```text
 FACT|Earth|IsA|Planet
@@ -77,9 +80,18 @@ RULE|IsA|TRANSITIVE
 - `WORD|alias|canonical-concept`
 - `RULE|relation|TRANSITIVE`
 
+Example prose:
+
+```text
+Earth is a planet.
+The Sun is a star.
+زمین یک سیاره است.
+زمین به دور خورشید می‌چرخد.
+```
+
 Escaping: `\\|` means a literal pipe and `\\\\` means a literal backslash. The default maximum line length is 1 MiB. Invalid UTF-8 and malformed records are reported and skipped. Directory training recursively processes `.sima` and `.txt` files.
 
-Only a tiny illustrative sample is included. Add your own licensed corpora; dataset collection and licensing are intentionally outside this implementation task.
+See [the text extraction specification](docs/TEXT_EXTRACTION.md) for supported patterns and limitations. Only a tiny illustrative sample is included. Add your own licensed corpora; dataset collection and licensing are intentionally outside this implementation task.
 
 ## Console commands
 
@@ -107,9 +119,9 @@ The executable also supports `--help` and `--version`. Default snapshot: `storag
 - `src/`: implementation and console application.
 - `tests/`: deterministic integration tests.
 - `datasets/examples/`: a tiny format demonstration, not a real corpus.
-- `docs/`: architecture, format, limitations, testing, and security notes.
+- `docs/`: architecture, formats, limitations, testing, and security notes.
 
-Read [Architecture](docs/ARCHITECTURE.md), [Dataset format](docs/DATA_FORMAT.md), [Limitations](docs/LIMITATIONS.md), [Testing](docs/TESTING.md), [Security](docs/SECURITY.md), and [Roadmap](docs/ROADMAP.md).
+Read [Architecture](docs/ARCHITECTURE.md), [Dataset format](docs/DATA_FORMAT.md), [Text extraction](docs/TEXT_EXTRACTION.md), [Limitations](docs/LIMITATIONS.md), [Testing](docs/TESTING.md), [Security](docs/SECURITY.md), and [Roadmap](docs/ROADMAP.md).
 
 ## Design principles
 

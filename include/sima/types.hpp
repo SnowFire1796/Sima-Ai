@@ -17,6 +17,7 @@ struct Rule { std::string relation; bool transitive{false}; };
 struct Diagnostic { std::size_t line{0}; std::string message; };
 struct TrainReport {
  std::size_t lines_read{0},facts_added{0},aliases_added{0},rules_added{0},duplicates{0};
+ std::size_t sentences_seen{0},sentences_extracted{0},sentences_unmatched{0};
  std::vector<Diagnostic> diagnostics;
 };
 struct SearchHit { Fact fact; double score{0}; bool inferred{false}; };

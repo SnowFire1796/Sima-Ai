@@ -1,17 +1,18 @@
 # Roadmap
 
 ## 0.1 — Symbolic foundation
-- [x] Modular C++ core and console
+- [x] Modular C++26 core and console
 - [x] UTF-8 validation and basic Persian normalization
 - [x] Language-independent concepts and aliases
 - [x] Structured facts and provenance metadata
-- [x] Dataset ingestion with diagnostics, escaping, and line limits
+- [x] Conservative English/Persian sentence templates
+- [x] File and recursive directory ingestion with diagnostics
 - [x] Transitive inference and path explanations
 - [x] Inverted retrieval index
 - [x] Evidence evaluation and conservative answer composition
 - [x] Bounded in-process session memory
 - [x] Versioned binary persistence
-- [x] CMake build, CI workflow, and automated tests
+- [x] CMake presets, CI workflow, and automated tests
 
 ## 0.2 — Language and data quality
 - [ ] Full Unicode normalization and robust punctuation handling
@@ -19,6 +20,7 @@
 - [ ] Corpus validator, duplicate report, and provenance audit
 - [ ] Contradiction detection and conflict policies
 - [ ] Stable external concept IDs and safe concept merging
+- [ ] Broader, test-driven extraction patterns and sentence segmentation
 - [ ] Persistent, user-controllable episodic memory
 
 ## 0.3 — Reasoning and retrieval

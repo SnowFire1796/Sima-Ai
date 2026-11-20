@@ -6,7 +6,7 @@ Sima is a symbolic, knowledge-centric engine implemented in C++26. Language-spec
 
 1. **Input and language** — UTF-8 validation, normalization, tokenization, and coarse script detection.
 2. **Concept store** — canonical concepts and multilingual aliases.
-3. **Learning** — stream one dataset at a time from a file or recursively scanned directory; report per-file and per-line diagnostics.
+3. **Learning** — stream structured `.sima` or mixed prose/record `.txt` datasets from files or recursively scanned directories; report per-file and per-line diagnostics.
 4. **Knowledge base** — subject–relation–object facts, provenance, confidence, and subject index.
 5. **Reasoner** — explicit transitive rules, deterministic breadth-first closure, and evidence-path explanations.
 6. **Retrieval** — inverted term index over labels, relations, and source metadata.
@@ -24,6 +24,7 @@ Sima is a symbolic, knowledge-centric engine implemented in C++26. Language-spec
 - Loading validates a temporary candidate before replacing active state.
 - Derived facts are computed on demand and are not silently persisted as source facts.
 - Session memory is bounded and disappears when the process exits.
+- Plain-text extraction only emits facts for explicitly supported templates.
 
 ## Complexity
 
@@ -32,7 +33,8 @@ Sima is a symbolic, knowledge-centric engine implemented in C++26. Language-spec
 - Fact insertion: expected O(1) index update after duplicate lookup.
 - Retrieval: proportional to query postings plus ranking.
 - Transitive reasoning: breadth-first traversal from each source concept; dense graphs can still be expensive, so inference output is capped.
+- Directory training sorts discovered file paths before ingestion to keep concept allocation and record order reproducible.
 
 ## Symbolic boundary
 
-Sima stores explicit records and applies explicit algorithms. It does not learn statistical language representations or acquire broad world knowledge merely by reading arbitrary text. The current trainer ingests structured FACT, WORD, and RULE records; it does not pretend to reliably extract arbitrary prose.
+Sima stores explicit records and applies explicit algorithms. It does not learn statistical language representations or acquire broad world knowledge merely by reading arbitrary text. The trainer recognizes a small, documented set of sentence structures; it does not pretend to reliably extract arbitrary prose.

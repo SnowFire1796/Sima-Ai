@@ -17,12 +17,13 @@ Current coverage includes:
 - Coarse language detection.
 - Concept aliases shared across scripts.
 - Fact ingestion, duplicate rejection, and alias-collision handling.
+- English and Persian text-template extraction.
 - Explicit transitive inference and path explanation.
 - The rule engine's refusal to assume transitivity without a rule.
 - Indexed retrieval and conservative unsupported-query behavior.
 - Bounded session memory and lexical recall.
 - Escaped delimiters in dataset records.
-- Recursive directory training.
+- Directory training that mixes structured and plain-text files.
 - Binary round-trip, replacement of an existing snapshot, and failed-load state preservation.
 
 The tests are not a substitute for fuzzing, large-corpus benchmarks, cross-platform CI, or adversarial file-format testing. Those remain release-hardening work.

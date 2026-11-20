@@ -1,6 +1,6 @@
 # Current limitations and honest guarantees
 
-Sima 0.1 is a symbolic prototype with real data structures and algorithms, not a general-purpose conversational model.
+Sima 0.1 is a symbolic engine with explicit data structures and algorithms, not a general-purpose conversational model.
 
 ## Language
 
@@ -8,10 +8,12 @@ Sima 0.1 is a symbolic prototype with real data structures and algorithms, not a
 - It does not implement full Unicode normalization, stemming, morphology, transliteration, or grammatical parsing.
 - Language detection is a coarse script heuristic, not a language identification model.
 
-## Learning
+## Learning and extraction
 
-- The reader ingests explicit FACT, WORD, and RULE records.
-- It does not reliably extract facts from arbitrary prose or learn from unstructured conversation.
+- Structured datasets support FACT, WORD, and RULE records.
+- Plain-text extraction supports only the finite templates listed in [TEXT_EXTRACTION.md](TEXT_EXTRACTION.md).
+- It does not perform unrestricted information extraction, coreference resolution, entity linking, negation handling, or fact verification.
+- Unsupported sentences are counted and skipped; they are not converted into guessed facts.
 - Dataset quality, source attribution, and licensing remain external responsibilities.
 
 ## Reasoning

@@ -8,6 +8,7 @@ add_library(sima_core
     src/text.cpp
     src/storage.cpp
     src/dataset.cpp
+    src/extractor.cpp
     src/learning.cpp
     src/reasoner.cpp
     src/retrieval.cpp

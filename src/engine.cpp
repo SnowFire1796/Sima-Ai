@@ -1,8 +1,9 @@
 #include "sima/engine.hpp"
+#include "sima/extractor.hpp"
 #include "sima/text.hpp"
 namespace sima {
 TrainReport SimaEngine::train(const std::filesystem::path&path){auto report=learner_.train_path(path,knowledge_);rebuild();return report;}
-TrainReport SimaEngine::train_text(const std::string&content){auto report=DatasetReader::train_text(content,knowledge_);rebuild();return report;}
+TrainReport SimaEngine::train_text(const std::string&content){auto report=TextFactExtractor::train_text(content,knowledge_);rebuild();return report;}
 std::vector<const Fact*>SimaEngine::ask(std::string_view subject,std::string_view relation)const{const auto id=knowledge_.concepts.resolve(subject);return id?knowledge_.find(id,text::trim(relation)):std::vector<const Fact*>{};}
 std::vector<Fact>SimaEngine::infer(std::size_t limit)const{return Reasoner(knowledge_).infer(limit);}
 Answer SimaEngine::query(std::string_view query_text,std::size_t limit){const auto hits=index_.search(query_text,knowledge_,limit);auto answer=generator_.compose(hits);const auto evaluation=evaluator_.evaluate(text::tokenize(query_text),hits);if(!evaluation.sufficient){answer.sufficient=false;if(!hits.empty())answer.text="I found possible matches, but the evidence overlap is weak. Treat these as leads, not a confirmed answer.\n"+answer.text;}memory_.remember(std::string(query_text),answer.text);return answer;}
