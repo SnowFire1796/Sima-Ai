@@ -1,0 +1,53 @@
+# Synthetic GPT-6 authored Persian C++ language QA.
+QA|C++ چیست؟|C++ زبان برنامه‌نویسی چندپارادایمی با نوع‌دهی ایستا و پشتیبانی از برنامه‌نویسی رویه‌ای، شیءگرا و generic است.|synthetic-gpt6-cpp-v2
+QA|ترجمه در C++ چه مراحلی دارد؟|در پیاده‌سازی متداول، پیش‌پردازش، ترجمه هر واحد ترجمه، تولید فایل object و پیوند نهایی انجام می‌شود؛ جزئیات به toolchain وابسته است.|synthetic-gpt6-cpp-v2
+QA|واحد ترجمه در C++ چیست؟|واحد ترجمه حاصل پردازش یک فایل مبدأ پس از اعمال دستورهای پیش‌پردازنده و واردکردن محتوای include است که جداگانه ترجمه می‌شود.|synthetic-gpt6-cpp-v2
+QA|header file در C++ چه کاربردی دارد؟|فایل header اعلان‌هایی مانند تابع، کلاس، قالب و ثابت را در اختیار واحدهای ترجمه قرار می‌دهد؛ تعریف‌ها و جزئیات پیوند باید با قواعد ODR سازگار باشند.|synthetic-gpt6-cpp-v2
+QA|تفاوت declaration و definition چیست؟|اعلان وجود و نوع یک موجودیت را معرفی می‌کند؛ تعریف معمولاً جزئیات لازم برای ایجاد یا پیاده‌سازی آن را فراهم می‌آورد، هرچند برخی اعلان‌ها خود تعریف‌اند.|synthetic-gpt6-cpp-v2
+QA|ODR در C++ چیست؟|One Definition Rule محدودیت‌هایی درباره تعداد و سازگاری تعریف موجودیت‌های دارای پیوند در برنامه تعیین می‌کند؛ نقض آن ممکن است برنامه را ill-formed یا دارای رفتار تعریف‌نشده کند.|synthetic-gpt6-cpp-v2
+QA|namespace در C++ چیست؟|namespace نام‌ها را در حوزه‌ای جدا سازمان‌دهی می‌کند تا برخورد نام‌ها کاهش یابد و ساختار کتابخانه روشن‌تر شود.|synthetic-gpt6-cpp-v2
+QA|auto در C++ چه می‌کند؟|auto نوع متغیر را از initializer استنتاج می‌کند؛ qualifiers و referenceها بسته به قواعد استنتاج حفظ یا حذف می‌شوند.|synthetic-gpt6-cpp-v2
+QA|decltype چیست؟|decltype نوع یک عبارت را طبق قواعد ویژه زبان استخراج می‌کند و در generic programming و اعلان نوع بازگشتی کاربرد دارد.|synthetic-gpt6-cpp-v2
+QA|const در C++ چه مفهومی دارد؟|const دسترسی از طریق نام یا ارجاع را از تغییر مقدار منع می‌کند، اما لزوماً به معنای تغییرناپذیری کامل شیء از همه مسیرها نیست.|synthetic-gpt6-cpp-v2
+QA|constexpr چیست؟|constexpr به موجودیت یا تابعی اجازه می‌دهد در صورت برآورده‌بودن شرایط زبان در ارزیابی زمان کامپایل استفاده شود؛ تابع constexpr الزاماً همیشه در کامپایل اجرا نمی‌شود.|synthetic-gpt6-cpp-v2
+QA|consteval چیست؟|consteval تابع فوری تعریف می‌کند که هر فراخوانی معتبر آن باید در زمان کامپایل ارزیابی شود.|synthetic-gpt6-cpp-v2
+QA|constinit چیست؟|constinit تضمین می‌کند متغیر دارای static یا thread storage duration با constant initialization مقداردهی شود؛ این کلیدواژه به‌تنهایی متغیر را const نمی‌کند.|synthetic-gpt6-cpp-v2
+QA|reference در C++ چیست؟|reference نام مستعار یک شیء موجود است و هنگام مقداردهی باید به هدف معتبری متصل شود؛ reference معمولی بعداً به شیء دیگری rebind نمی‌شود.|synthetic-gpt6-cpp-v2
+QA|pointer در C++ چیست؟|pointer متغیری است که آدرس یک شیء یا تابع را نگه می‌دارد یا می‌تواند مقدار تهی داشته باشد؛ dereference pointer نامعتبر رفتار تعریف‌نشده ایجاد می‌کند.|synthetic-gpt6-cpp-v2
+QA|nullptr چیست؟|nullptr مقدار تهی نوع std::nullptr_t است و برای مقداردهی pointer تهی به‌کار می‌رود؛ نسبت به عدد صفر در overload resolution دقیق‌تر است.|synthetic-gpt6-cpp-v2
+QA|RAII چرا در C++ مهم است؟|RAII مالکیت منبع را به طول عمر شیء متصل می‌کند تا destructor در خروج عادی و هنگام unwind استثنا منبع را آزاد کند.|synthetic-gpt6-cpp-v2
+QA|unique_ptr چیست؟|std::unique_ptr مالکیت انحصاری یک شیء پویا را مدیریت می‌کند و معمولاً قابل کپی نیست اما قابل انتقال است.|synthetic-gpt6-cpp-v2
+QA|shared_ptr چیست؟|std::shared_ptr مالکیت اشتراکی را با شمارش ارجاع مدیریت می‌کند؛ چرخه ارجاع می‌تواند مانع آزادسازی شود و معمولاً weak_ptr برای شکستن چرخه به‌کار می‌رود.|synthetic-gpt6-cpp-v2
+QA|weak_ptr چیست؟|std::weak_ptr ارجاع غیرمالکانه به شیء تحت مدیریت shared_ptr است و با lock می‌توان بررسی کرد آیا شیء هنوز زنده است یا نه.|synthetic-gpt6-cpp-v2
+QA|move semantics چیست؟|Move semantics اجازه می‌دهد منابع یک شیء موقت یا قابل‌انتقال به شیء دیگر منتقل شوند تا از کپی پرهزینه جلوگیری شود؛ وضعیت شیء مبدأ باید معتبر اما معمولاً نامعین فرض شود.|synthetic-gpt6-cpp-v2
+QA|std::move چه کاری می‌کند؟|std::move به‌خودی‌خود چیزی را جابه‌جا نمی‌کند؛ عبارت را به rvalue reference تبدیل می‌کند تا overload مناسب حرکت انتخاب شود.|synthetic-gpt6-cpp-v2
+QA|lvalue و rvalue چه تفاوتی دارند؟|این دسته‌بندی‌ها value category عبارت را توصیف می‌کنند؛ lvalue هویت قابل‌شناسایی دارد، در حالی‌که prvalue مقدار موقت تولید می‌کند و xvalue شیئی را نشان می‌دهد که منابعش قابل انتقال‌اند.|synthetic-gpt6-cpp-v2
+QA|template در C++ چیست؟|template سازوکاری برای تعریف تابع، کلاس یا alias پارامتری نسبت به نوع‌ها و مقادیر است که نمونه‌سازی آن بر اساس آرگومان‌های واقعی انجام می‌شود.|synthetic-gpt6-cpp-v2
+QA|template specialization چیست؟|تخصصی‌سازی template پیاده‌سازی متفاوتی برای مجموعه‌ای خاص از آرگومان‌های template فراهم می‌کند؛ می‌تواند کامل یا در برخی موارد جزئی باشد.|synthetic-gpt6-cpp-v2
+QA|concepts در C++ چه هستند؟|Concepts محدودیت‌های قابل‌نام‌گذاری برای آرگومان‌های template تعریف می‌کنند و خوانایی خطاها و کنترل overload را بهبود می‌دهند.|synthetic-gpt6-cpp-v2
+QA|SFINAE چیست؟|Substitution Failure Is Not An Error قاعده‌ای است که در برخی زمینه‌های جایگزینی template، شکست substitution را به حذف candidate از overload set منجر می‌کند نه خطای فوری.|synthetic-gpt6-cpp-v2
+QA|lambda expression چیست؟|lambda تابع شیء ناشناس است که می‌تواند متغیرهای محیط را با capture دریافت کند و در محل تعریف شود.|synthetic-gpt6-cpp-v2
+QA|capture در lambda چیست؟|capture تعیین می‌کند lambda چگونه به متغیرهای بیرون دسترسی داشته باشد؛ capture می‌تواند با مقدار، reference یا capture پیش‌فرض انجام شود.|synthetic-gpt6-cpp-v2
+QA|std::vector چیست؟|std::vector آرایه پویا و پیوسته‌ای است که اندازه را مدیریت می‌کند و دسترسی تصادفی O(1) و درج انتهایی amortized O(1) دارد.|synthetic-gpt6-cpp-v2
+QA|std::string چیست؟|std::string رشته‌ای از charها را مدیریت می‌کند؛ برای متن Unicode باید encoding و مرز code pointها را جداگانه مدیریت کرد.|synthetic-gpt6-cpp-v2
+QA|std::map و std::unordered_map چه تفاوتی دارند؟|std::map معمولاً درخت متوازن با ترتیب کلید و عملیات O(log n) دارد؛ unordered_map جدول hash با عملیات میانگین O(1) و بدون ترتیب کلید است.|synthetic-gpt6-cpp-v2
+QA|iterator invalidation چیست؟|ابطال iterator زمانی رخ می‌دهد که تغییر ساختار کانتینر اعتبار iterator یا reference قبلی را طبق قواعد آن کانتینر از بین ببرد.|synthetic-gpt6-cpp-v2
+QA|range-based for در C++ چگونه کار می‌کند؟|حلقه range-based for عناصر یک range را پیمایش می‌کند و از begin و end یا سازوکارهای range متناظر استفاده می‌کند.|synthetic-gpt6-cpp-v2
+QA|exception safety guarantee چیست؟|تضمین ایمنی استثنا سطح سلامت برنامه پس از پرتاب استثنا را مشخص می‌کند؛ تضمین‌های رایج no-throw، strong و basic هستند.|synthetic-gpt6-cpp-v2
+QA|undefined behavior در C++ چرا خطرناک است؟|رفتار تعریف‌نشده هیچ نتیجه‌ای را از سوی استاندارد تضمین نمی‌کند و کامپایلر می‌تواند بر فرض رخ‌ندادن آن بهینه‌سازی کند؛ بنابراین حتی خروجی ظاهراً درست در یک build قابل اتکا نیست.|synthetic-gpt6-cpp-v2
+QA|data race در C++ چیست؟|data race زمانی رخ می‌دهد که دست‌کم دو thread بدون رابطه همگام‌سازی مناسب به یک مکان حافظه دسترسی متعارض داشته باشند و دست‌کم یکی نوشتن باشد؛ نتیجه رفتار تعریف‌نشده است.|synthetic-gpt6-cpp-v2
+QA|std::mutex چیست؟|std::mutex ابزار mutual exclusion است که اجازه می‌دهد در یک لحظه فقط یک thread بخش محافظت‌شده را در اختیار داشته باشد.|synthetic-gpt6-cpp-v2
+QA|std::lock_guard چیست؟|std::lock_guard قفل mutex را هنگام ساخت می‌گیرد و هنگام نابودی آزاد می‌کند و الگوی RAII برای قفل‌گذاری ساده است.|synthetic-gpt6-cpp-v2
+QA|std::unique_lock چه تفاوتی با lock_guard دارد؟|unique_lock امکان قفل‌گذاری deferred، بازکردن و گرفتن مجدد قفل و انتقال مالکیت قفل را فراهم می‌کند و برای condition_variable مناسب است.|synthetic-gpt6-cpp-v2
+QA|std::atomic چیست؟|std::atomic عملیات اتمی روی نوع‌های پشتیبانی‌شده فراهم می‌کند و امکان تعیین memory ordering برای هماهنگی threadها را می‌دهد.|synthetic-gpt6-cpp-v2
+QA|memory_order_relaxed چیست؟|memory_order_relaxed اتمی‌بودن عملیات را تضمین می‌کند اما به‌تنهایی ترتیب همگام‌سازی میان عملیات روی اشیای دیگر ایجاد نمی‌کند.|synthetic-gpt6-cpp-v2
+QA|std::thread چیست؟|std::thread شیء نماینده یک thread اجرایی است؛ پیش از نابودی باید join یا detach شود و نابودی thread joinable باعث terminate می‌شود.|synthetic-gpt6-cpp-v2
+QA|std::jthread چه مزیتی دارد؟|std::jthread در نابودی به‌طور خودکار join می‌کند و سازوکار stop token برای درخواست توقف مشارکتی فراهم می‌آورد.|synthetic-gpt6-cpp-v2
+QA|module در C++ چیست؟|ماژول واحدی برای سازمان‌دهی و انتشار رابط و پیاده‌سازی است که می‌تواند وابستگی متنی و هزینه‌های تکراری include را کاهش دهد.|synthetic-gpt6-cpp-v2
+QA|coroutine در C++ چیست؟|Coroutine تابعی است که می‌تواند اجرا را suspend و بعداً resume کند؛ نوع بازگشتی و promise type رفتار آن را چارچوب‌بندی می‌کنند.|synthetic-gpt6-cpp-v2
+QA|std::optional چیست؟|std::optional شیئی را نگه می‌دارد که ممکن است مقدار نداشته باشد و برای نمایش نتیجه اختیاری بدون sentinel مناسب است.|synthetic-gpt6-cpp-v2
+QA|std::variant چیست؟|std::variant نوعی tagged union امن است که در هر لحظه یکی از چند نوع جایگزین را نگه می‌دارد.|synthetic-gpt6-cpp-v2
+QA|std::expected چیست؟|std::expected نتیجه‌ای را نمایش می‌دهد که یا مقدار موفقیت دارد یا خطا؛ این نوع در C++23 استاندارد شده است.|synthetic-gpt6-cpp-v2
+QA|std::span چیست؟|std::span نمای غیرمالکانه و پیوسته‌ای از دنباله عناصر است که اندازه آن را نیز نگه می‌دارد و مالک حافظه نیست.|synthetic-gpt6-cpp-v2
+QA|std::string_view چیست؟|std::string_view نمای غیرمالکانه از توالی پیوسته char است؛ عمر آن نباید از عمر داده اصلی بیشتر شود.|synthetic-gpt6-cpp-v2
+QA|C++26 چه نوع استانداردی است؟|C++26 نسخه استاندارد زبان C++ است که قابلیت‌های آن در فرایند استانداردسازی نهایی و پیاده‌سازی کامپایلرها به‌تدریج عرضه می‌شود؛ پشتیبانی واقعی هر ویژگی باید با مستندات کامپایلر بررسی شود.|synthetic-gpt6-cpp-v2
