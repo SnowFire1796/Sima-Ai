@@ -10,9 +10,10 @@ Sima 0.1 is a symbolic engine with explicit data structures and algorithms, not 
 
 ## Learning and extraction
 
-- Structured datasets support FACT, WORD, and RULE records.
+- Structured datasets support FACT, WORD, RULE, and QA records.
 - Plain-text extraction supports only the finite templates listed in [TEXT_EXTRACTION.md](TEXT_EXTRACTION.md).
 - It does not perform unrestricted information extraction, coreference resolution, entity linking, negation handling, or fact verification.
+- Q/A responses are returned only for normalized exact-question matches; they are not semantic paraphrase matching.
 - Unsupported sentences are counted and skipped; they are not converted into guessed facts.
 - Dataset quality, source attribution, and licensing remain external responsibilities.
 
@@ -24,11 +25,12 @@ Sima 0.1 is a symbolic engine with explicit data structures and algorithms, not 
 
 ## Answering
 
-- Query is lexical retrieval, not unrestricted natural-language question answering.
+- Query is exact Q/A lookup followed by lexical fact retrieval, not unrestricted natural-language question answering.
 - A relevant search hit is evidence of lexical overlap, not proof that it answers the user's intent.
 - Unsupported questions should remain unanswered.
 
 ## Operations
 
 - Large-corpus performance requires benchmarking and likely optimized incremental indexes.
-- Binary format version 1 is an initial format; future incompatible changes must increment the version and provide migration tooling.
+- Binary format version 2 adds Q/A pairs and remains backward-readable for version 1 snapshots.
+- Future incompatible changes must increment the version and provide migration tooling.

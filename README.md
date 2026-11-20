@@ -2,9 +2,9 @@
 
 A deterministic, knowledge-driven bilingual AI engine written in **standard C++26**. Sima deliberately uses **no neural networks, model weights, tensor libraries, Python runtime, or third-party runtime dependencies**.
 
-The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, deterministic template-based extraction from supported English and Persian prose, recursive dataset ingestion, indexed retrieval, evidence evaluation, answer composition, bounded session memory, and binary persistence.
+The first release provides a symbolic foundation: UTF-8 text handling, language-independent concept IDs, multilingual aliases, structured facts, explicit inference rules, deterministic template-based extraction from supported English and Persian prose, exact-match Q/A retrieval, recursive dataset ingestion, indexed retrieval, evidence evaluation, bounded session memory, and binary persistence.
 
-> Sima is not an LLM. It does not claim unrestricted language understanding. It reasons over the facts and rules supplied to it and reports when evidence is missing.
+> Sima is not an LLM. It does not claim unrestricted language understanding. It reasons over the facts, rules, and response pairs supplied to it and reports when evidence is missing.
 
 ## Features
 
@@ -12,9 +12,11 @@ The first release provides a symbolic foundation: UTF-8 text handling, language-
 - UTF-8 validation, basic Persian/Arabic character normalization, tokenization, and coarse script detection.
 - Shared concepts across languages through aliases (for example, `Dog` and `سگ`).
 - Subject–relation–object facts with source, confidence, and origin metadata.
+- Structured FACT / WORD / RULE / QA records.
 - Bounded, line-by-line dataset reader with diagnostics and escaped delimiters.
 - Recursive directory training for `.sima` and `.txt` datasets.
 - Rule-based English and Persian sentence templates for common relations.
+- Exact normalized-question lookup for stored Q/A pairs.
 - Explicit transitive inference rules and evidence-path explanations.
 - Inverted retrieval index with deterministic result ordering.
 - Evidence coverage evaluation and conservative answer composition.
@@ -54,8 +56,10 @@ train datasets/examples
 stats
 ask Earth IsA
 query planet sun
+query What is the capital of France?
 infer
 why Dog IsA Animal
+qa
 memory
 recall dog
 save storage/knowledge.sima
@@ -74,11 +78,13 @@ FACT|Earth|Orbits|Sun|astronomy-corpus
 WORD|زمین|Earth
 WORD|سیاره|Planet
 RULE|IsA|TRANSITIVE
+QA|What is the capital of France?|Paris|world-atlas
 ```
 
 - `FACT|subject|relation|object[|source]`
 - `WORD|alias|canonical-concept`
 - `RULE|relation|TRANSITIVE`
+- `QA|question|answer[|source]`
 
 Example prose:
 
@@ -88,6 +94,8 @@ The Sun is a star.
 زمین یک سیاره است.
 زمین به دور خورشید می‌چرخد.
 ```
+
+Q/A pairs are matched by normalized question tokens, not semantic similarity. They are returned before lexical fact retrieval when an exact normalized key matches. The engine does not invent new answers from these pairs.
 
 Escaping: `\\|` means a literal pipe and `\\\\` means a literal backslash. The default maximum line length is 1 MiB. Invalid UTF-8 and malformed records are reported and skipped. Directory training recursively processes `.sima` and `.txt` files.
 
@@ -99,10 +107,11 @@ See [the text extraction specification](docs/TEXT_EXTRACTION.md) for supported p
 |---|---|
 | `train <file-or-directory>` | Ingest one dataset or recursively scan a directory |
 | `ask <subject> <relation>` | Find direct facts |
-| `query <text>` | Retrieve and evaluate matching evidence |
+| `query <text>` | Exact Q/A lookup, then evidence retrieval |
 | `infer [limit]` | Compute explicit rule-based consequences |
 | `why <subject> <relation> <object>` | Explain a direct or inferred path |
 | `list [limit]` | List stored facts |
+| `qa [limit]` | List stored Q/A pairs |
 | `memory [limit]` | Show recent session memories |
 | `recall <text>` | Search current session memory |
 | `stats` | Show counts and index size |

@@ -1,6 +1,6 @@
 # Plain-text extraction
 
-Files ending in `.txt` are processed by the deterministic template extractor. Files ending in `.sima` use the explicit structured-record parser. A TXT file may mix both formats.
+Files ending in `.txt` are processed by the deterministic template extractor. Files ending in `.sima` use the explicit structured-record parser. A TXT file may mix prose with FACT, WORD, RULE, and QA records.
 
 ## Supported English patterns
 
@@ -22,6 +22,10 @@ Files ending in `.txt` are processed by the deterministic template extractor. Fi
 - `چرخ بخشی از خودرو است.` → `چرخ --PartOf--> خودرو`
 - `زمین به دور خورشید می‌چرخد.` → `زمین --Orbits--> خورشید`
 
+## Q/A records
+
+A line such as `QA|What is the capital of France?|Paris|atlas` adds an exact response pair. The question key is token-normalized, so casing and common punctuation differences do not matter. This is not semantic search: paraphrases and questions with different tokens will not match.
+
 The extractor is intentionally conservative and supports one-token subjects plus simple relation templates. It does not perform full grammar parsing, entity resolution, negation handling, coreference, tense analysis, or fact verification. Unsupported sentences are counted rather than guessed.
 
-Extracted prose facts use confidence metadata 0.65 and retain the source file and line number. This value is a heuristic provenance marker, not a calibrated probability. Structured FACT records remain the preferred way to provide high-quality knowledge.
+Extracted prose facts use confidence metadata 0.65 and retain the source file and line number. This value is a heuristic provenance marker, not a calibrated probability. Structured FACT and QA records remain the preferred way to provide high-quality knowledge.

@@ -4,14 +4,15 @@
 - [x] Modular C++26 core and console
 - [x] UTF-8 validation and basic Persian normalization
 - [x] Language-independent concepts and aliases
-- [x] Structured facts and provenance metadata
+- [x] Structured facts, rules, aliases, and Q/A response pairs
 - [x] Conservative English/Persian sentence templates
 - [x] File and recursive directory ingestion with diagnostics
 - [x] Transitive inference and path explanations
 - [x] Inverted retrieval index
+- [x] Exact normalized Q/A retrieval
 - [x] Evidence evaluation and conservative answer composition
 - [x] Bounded in-process session memory
-- [x] Versioned binary persistence
+- [x] Versioned binary persistence with v1 backward compatibility
 - [x] CMake presets, CI workflow, and automated tests
 
 ## 0.2 — Language and data quality
