@@ -17,8 +17,8 @@ The first release provides a symbolic foundation: UTF-8 text handling, language-
 - Inverted retrieval index with deterministic result ordering.
 - Evidence coverage evaluation and conservative answer composition.
 - Bounded short-term session memory with recent-history and lexical recall APIs.
-- Versioned little-endian binary snapshots and transactional validated loading.
-- Console interface, CMake build, and automated tests.
+- Versioned little-endian binary snapshots, deterministic concept serialization, and transactional validated loading.
+- Console interface, CMake build, CI workflow, and automated tests.
 
 ## Build
 
@@ -52,8 +52,10 @@ train datasets/examples/core.sima
 stats
 ask Earth IsA
 query planet sun
+infer
 why Dog IsA Animal
 memory
+recall dog
 save storage/knowledge.sima
 exit
 ```
@@ -85,9 +87,11 @@ Only a tiny illustrative sample is included. Add your own licensed corpora; data
 | `train <file>` | Ingest a dataset |
 | `ask <subject> <relation>` | Find direct facts |
 | `query <text>` | Retrieve and evaluate matching evidence |
+| `infer [limit]` | Compute explicit rule-based consequences |
 | `why <subject> <relation> <object>` | Explain a direct or inferred path |
 | `list [limit]` | List stored facts |
 | `memory [limit]` | Show recent session memories |
+| `recall <text>` | Search current session memory |
 | `stats` | Show counts and index size |
 | `save [file]` | Save a binary snapshot |
 | `load [file]` | Load a binary snapshot |
