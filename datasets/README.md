@@ -27,7 +27,7 @@ These are collection targets, not generated counts. Do not fill quotas with dupl
 
 ## GPT-6-generated synthetic corpus (2026-11-20)
 
-The repository contains original synthetic examples authored with GPT-6. The current pre-expansion repository contained **2,296 structured record lines** across its core and generated `.sima` files. The new file `generated/gpt6/fa/concept_definitions_expanded.sima` adds **8,029 QA records**: 259 curated concept definitions, each represented by 31 Persian and English exact-question formulations.
+The repository contains original synthetic examples authored with GPT-6. The current pre-expansion repository contained **2,296 structured record lines** across its core and generated `.sima` files. The new file `generated/gpt6/fa/concept_definitions_expanded.sima` adds **8,029 valid QA records**, all **8,029 exact-unique within that file**: 259 curated concept definitions, each represented by 31 Persian and English exact-question formulations.
 
 - **10,325 raw structured records** are now present by line-count addition (2,296 existing + 8,029 new).
 - The new expansion alone exceeds the requested 6,000-record milestone.
