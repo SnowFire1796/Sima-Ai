@@ -1,5 +1,4 @@
 # Conservative transitive relation rules only; enable only if the inference engine supports this exact rule form.
-RULE|IsA|TRANSITIVE
 RULE|PartOf|TRANSITIVE
 RULE|SubclassOf|TRANSITIVE
 RULE|LocatedWithin|TRANSITIVE
