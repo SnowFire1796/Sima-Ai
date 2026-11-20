@@ -27,15 +27,16 @@ These are collection targets, not generated counts. Do not fill quotas with dupl
 
 ## GPT-6-generated synthetic seed (2026-11-20)
 
-The repository now includes an original, synthetic expansion authored with GPT-6:
+The repository contains an original, synthetic expansion authored with GPT-6. A repository-wide recount of the current core and generated structured files reports:
 
-- `generated/gpt6/fa/conversation.sima`: 132 Persian QA records.
-- `generated/gpt6/knowledge/core.sima`: 119 structured FACT records.
-- Total added in this batch: **251 records**.
+- **1122 raw records** before exact duplicate elimination.
+- **1122 unique exact records** after exact duplicate elimination.
+- FACT: 301; WORD: 201; RULE: 4; QA: 616.
+- Persian and English QA, bilingual technical vocabulary, and structured knowledge spanning science, mathematics, C++, algorithms, language, reasoning, computing, networking, and security.
 
-These records are model-generated examples, **not** OpenAI's private pretraining dataset, a GPT-5.6/Luna dataset, or a dump of model weights or training data. Their source tags identify synthetic provenance. They are an initial curated seed, not a 500K corpus, and generated facts should be independently checked before high-stakes use.
+These are model-generated examples, **not** OpenAI's private pretraining dataset, a GPT-5.6/Luna dataset, or a dump of model weights or training data. Source tags identify synthetic provenance. Generated facts are not externally sourced citations and should be independently checked before high-stakes use.
 
-The existing builder discovers `.sima` files recursively under `datasets`, so this batch is included by the documented build command. Keep generated data separate from externally sourced data and preserve the source tags during processing.
+This remains a seed corpus, not the 500K target. The counts above describe raw repository records; the builder performs exact deduplication and validates record structure. The validation audit for this batch found 1 malformed records and 0 exact duplicate(s) before deduplication. Keep generated data separate from externally sourced data and preserve source tags during processing.
 
 ## Build a corpus from licensed sources
 
