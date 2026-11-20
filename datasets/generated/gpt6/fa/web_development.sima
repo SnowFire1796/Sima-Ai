@@ -1,0 +1,59 @@
+# Synthetic GPT-6 authored Persian web development QA.
+QA|HTML چیست؟|HTML زبان نشانه‌گذاری استاندارد برای ساختاردهی محتوای صفحات وب است و عناصر معنایی و ساختاری را تعریف می‌کند.|synthetic-gpt6-web-v2
+QA|CSS چیست؟|CSS زبان توصیف ظاهر و چیدمان اسناد وب است و ویژگی‌هایی مانند رنگ، فاصله، تایپوگرافی و layout را کنترل می‌کند.|synthetic-gpt6-web-v2
+QA|JavaScript چه نقشی در وب دارد؟|JavaScript زبان برنامه‌نویسی پرکاربرد وب است که تعامل صفحه، منطق سمت کاربر و با محیط‌های runtime مناسب منطق سمت سرور را پیاده می‌کند.|synthetic-gpt6-web-v2
+QA|DOM چیست؟|Document Object Model نمایش شیءگرای سند HTML یا XML است که اسکریپت‌ها می‌توانند از طریق آن ساختار و محتوای سند را بخوانند یا تغییر دهند.|synthetic-gpt6-web-v2
+QA|semantic HTML چیست؟|HTML معنایی از عناصر متناسب با مفهوم محتوا مانند main، nav، article و button استفاده می‌کند تا ساختار برای مرورگر، ابزار کمکی و توسعه‌دهنده روشن‌تر شود.|synthetic-gpt6-web-v2
+QA|تفاوت div و section چیست؟|div ظرف عمومی بدون معنای ذاتی است؛ section بخش موضوعی سند است که معمولاً عنوان دارد و باید زمانی استفاده شود که گروه‌بندی معنایی لازم باشد.|synthetic-gpt6-web-v2
+QA|تفاوت button و a چیست؟|button برای انجام عمل در صفحه است؛ a برای پیمایش به مقصد یا منبع دیگر استفاده می‌شود و انتخاب عنصر درست دسترس‌پذیری را بهبود می‌دهد.|synthetic-gpt6-web-v2
+QA|CSS box model چیست؟|مدل جعبه CSS از content، padding، border و margin تشکیل می‌شود؛ box-sizing تعیین می‌کند width و height چگونه محاسبه شوند.|synthetic-gpt6-web-v2
+QA|Flexbox برای چه کاری مناسب است؟|Flexbox مدل layout یک‌بعدی CSS است و برای توزیع و تراز عناصر در یک ردیف یا ستون مناسب است.|synthetic-gpt6-web-v2
+QA|CSS Grid چیست؟|CSS Grid سامانه layout دوبعدی است که ردیف‌ها و ستون‌ها را تعریف می‌کند و برای ساختارهای پیچیده صفحه مناسب است.|synthetic-gpt6-web-v2
+QA|responsive web design چیست؟|طراحی واکنش‌گرا چیدمان و محتوا را با اندازه viewport و ویژگی دستگاه سازگار می‌کند تا تجربه در نمایشگرهای مختلف قابل استفاده بماند.|synthetic-gpt6-web-v2
+QA|media query چیست؟|Media query در CSS اعمال قواعد را به ویژگی‌هایی مانند عرض viewport، جهت نمایش یا ترجیح کاربر وابسته می‌کند.|synthetic-gpt6-web-v2
+QA|mobile-first design چیست؟|رویکرد mobile-first طراحی را از محدودیت‌های صفحه کوچک آغاز می‌کند و سپس با breakpointها قابلیت‌های نمایشگر بزرگ‌تر را اضافه می‌کند.|synthetic-gpt6-web-v2
+QA|accessibility در وب چیست؟|دسترس‌پذیری وب یعنی محتوا و تعاملات برای افراد با توانایی‌ها و فناوری‌های کمکی متفاوت قابل استفاده باشند؛ semantic HTML، کنتراست و ناوبری صفحه‌کلید مهم‌اند.|synthetic-gpt6-web-v2
+QA|ARIA چیست؟|WAI-ARIA ویژگی‌هایی برای افزودن نقش، وضعیت و ویژگی‌های دسترس‌پذیری به رابط‌های پویا فراهم می‌کند؛ جایگزین HTML معنایی صحیح نیست.|synthetic-gpt6-web-v2
+QA|event bubbling چیست؟|در bubbling رویداد از عنصر هدف به والدهای آن در درخت DOM حرکت می‌کند، مگر اینکه انتشار متوقف شود.|synthetic-gpt6-web-v2
+QA|event delegation چیست؟|واگذاری رویداد یعنی handler روی والد نصب شود و رویدادهای فرزندان با استفاده از target یا مسیر رویداد تشخیص داده شوند؛ این روش برای عناصر پویا مفید است.|synthetic-gpt6-web-v2
+QA|Promise در JavaScript چیست؟|Promise شیئی است که نتیجه آینده یک عملیات ناهمگام را با وضعیت pending، fulfilled یا rejected نمایش می‌دهد.|synthetic-gpt6-web-v2
+QA|async و await چه می‌کنند؟|async تابعی می‌سازد که Promise برمی‌گرداند؛ await اجرای همان تابع async را تا settle شدن Promise معلق می‌کند بدون آنکه thread اصلی را مسدود کند.|synthetic-gpt6-web-v2
+QA|event loop در JavaScript چیست؟|Event loop هماهنگی اجرای کد، صف taskها و microtaskها و عملیات ورودی‌وخروجی را در محیط runtime مدیریت می‌کند.|synthetic-gpt6-web-v2
+QA|fetch API چیست؟|Fetch API برای درخواست شبکه و دریافت Response مبتنی بر Promise استفاده می‌شود؛ پاسخ HTTP ناموفق لزوماً Promise را reject نمی‌کند و باید status بررسی شود.|synthetic-gpt6-web-v2
+QA|CORS چیست؟|Cross-Origin Resource Sharing سازوکاری مبتنی بر header است که به سرور اجازه می‌دهد دسترسی اسکریپت‌های مرورگر از originهای دیگر را طبق سیاست مشخص کنترل کند.|synthetic-gpt6-web-v2
+QA|same-origin policy چیست؟|سیاست same-origin محدودیت امنیتی مرورگر است که دسترسی مستقیم اسناد و منابع میان originهای متفاوت را کنترل می‌کند؛ origin از scheme، host و port تشکیل می‌شود.|synthetic-gpt6-web-v2
+QA|cookie چیست؟|Cookie داده کوچکی است که مرورگر طبق دامنه، مسیر، زمان و ویژگی‌های امنیتی برای درخواست‌ها نگه می‌دارد و ارسال می‌کند.|synthetic-gpt6-web-v2
+QA|HttpOnly cookie چیست؟|ویژگی HttpOnly دسترسی مستقیم JavaScript به cookie را محدود می‌کند و می‌تواند خطر سرقت cookie از طریق برخی حملات XSS را کاهش دهد.|synthetic-gpt6-web-v2
+QA|Secure cookie چیست؟|ویژگی Secure ارسال cookie را به کانال امن مانند HTTPS محدود می‌کند، با جزئیات وابسته به رفتار مرورگر.|synthetic-gpt6-web-v2
+QA|SameSite cookie چیست؟|ویژگی SameSite کنترل می‌کند cookie در درخواست‌های cross-site چه زمانی ارسال شود و می‌تواند سطح حملات CSRF را کاهش دهد.|synthetic-gpt6-web-v2
+QA|localStorage چیست؟|localStorage ذخیره‌سازی کلید-مقدار سمت مرورگر با ماندگاری معمولاً فراتر از session است و داده را برای همان origin نگه می‌دارد.|synthetic-gpt6-web-v2
+QA|sessionStorage چیست؟|sessionStorage داده کلید-مقدار را برای origin و browsing context جاری نگه می‌دارد و معمولاً با پایان session زبانه پاک می‌شود.|synthetic-gpt6-web-v2
+QA|IndexedDB چیست؟|IndexedDB پایگاه داده سمت مرورگر برای ذخیره ساختاریافته و حجم نسبتاً زیاد داده است و API آن ناهمگام و مبتنی بر تراکنش است.|synthetic-gpt6-web-v2
+QA|REST چیست؟|REST سبک معماری برای سامانه‌های توزیع‌شده است که بر منابع، شناسه‌ها، نمایش‌ها و محدودیت‌هایی مانند statelessness تکیه دارد؛ هر API مبتنی بر HTTP الزاماً REST کامل نیست.|synthetic-gpt6-web-v2
+QA|HTTP method GET چه معنایی دارد؟|GET برای دریافت نمایش یک منبع استفاده می‌شود و در طراحی HTTP باید safe و idempotent باشد.|synthetic-gpt6-web-v2
+QA|HTTP method POST چه کاربردی دارد؟|POST برای ارسال داده به منبع جهت پردازش یا ایجاد زیرمنبع استفاده می‌شود و ذاتاً idempotent نیست.|synthetic-gpt6-web-v2
+QA|HTTP method PUT چه معنایی دارد؟|PUT نمایش منبع مقصد را ایجاد یا جایگزین می‌کند و طبق معنای HTTP idempotent است.|synthetic-gpt6-web-v2
+QA|HTTP method PATCH چیست؟|PATCH برای اعمال تغییر جزئی روی منبع استفاده می‌شود و idempotence آن به قالب و معنای patch وابسته است.|synthetic-gpt6-web-v2
+QA|HTTP status 200 چیست؟|کد 200 OK نشان می‌دهد درخواست با موفقیت پردازش شده و پاسخ معمولاً شامل نمایش یا نتیجه درخواست است.|synthetic-gpt6-web-v2
+QA|HTTP status 201 چیست؟|کد 201 Created نشان می‌دهد درخواست موفق به ایجاد یک یا چند منبع شده است؛ header Location می‌تواند منبع تازه را مشخص کند.|synthetic-gpt6-web-v2
+QA|HTTP status 204 چیست؟|کد 204 No Content نشان می‌دهد درخواست موفق بوده اما پاسخ بدنه محتوا ندارد.|synthetic-gpt6-web-v2
+QA|HTTP status 301 و 302 چه تفاوتی دارند؟|301 انتقال دائمی و 302 انتقال موقت را نشان می‌دهد؛ رفتار تغییر method در کلاینت‌ها و معنای دقیق هر redirect باید در نظر گرفته شود.|synthetic-gpt6-web-v2
+QA|HTTP status 400 چیست؟|کد 400 Bad Request نشان می‌دهد سرور درخواست را به دلیل مشکل سمت کلاینت مانند syntax نامعتبر نمی‌تواند پردازش کند.|synthetic-gpt6-web-v2
+QA|HTTP status 401 و 403 چه تفاوتی دارند؟|401 به نبود یا نامعتبر بودن اعتبارنامه احراز هویت اشاره دارد؛ 403 یعنی سرور درخواست را فهمیده اما اجازه انجام آن را نمی‌دهد.|synthetic-gpt6-web-v2
+QA|HTTP status 404 چیست؟|کد 404 Not Found یعنی سرور نمایش منبعی برای URI درخواست‌شده پیدا نکرده یا نمی‌خواهد وجود آن را تأیید کند.|synthetic-gpt6-web-v2
+QA|HTTP status 500 چیست؟|کد 500 Internal Server Error خطای عمومی سمت سرور را نشان می‌دهد که علت دقیق آن در پاسخ عمومی افشا نمی‌شود.|synthetic-gpt6-web-v2
+QA|JSON چیست؟|JSON قالب متنی سبک برای نمایش داده ساختاریافته با object، array، string، number، boolean و null است.|synthetic-gpt6-web-v2
+QA|WebAssembly چیست؟|WebAssembly قالب دستورالعمل باینری قابل اجرا در محیط‌های sandbox شده است که برای اجرای کد قابل حمل و نزدیک به native طراحی شده است.|synthetic-gpt6-web-v2
+QA|SSR چیست؟|Server-Side Rendering تولید HTML اولیه در سرور است تا محتوا پیش از اجرای JavaScript در مرورگر قابل نمایش یا crawl باشد.|synthetic-gpt6-web-v2
+QA|CSR چیست؟|Client-Side Rendering بخش اصلی رابط را در مرورگر با JavaScript می‌سازد؛ این روش می‌تواند تعامل پویا فراهم کند اما به بارگذاری و اجرای اسکریپت وابسته است.|synthetic-gpt6-web-v2
+QA|hydration در وب چیست؟|Hydration اتصال event handlerها و رفتار برنامه سمت کاربر به HTML از پیش رندرشده است تا صفحه تعاملی شود.|synthetic-gpt6-web-v2
+QA|Service Worker چیست؟|Service Worker اسکریپت پس‌زمینه‌ای مرورگر است که می‌تواند درخواست‌های شبکه را کنترل کند و قابلیت‌هایی مانند cache و تجربه آفلاین برای وب‌اپ فراهم آورد.|synthetic-gpt6-web-v2
+QA|PWA چیست؟|Progressive Web App وب‌اپی است که با قابلیت‌هایی مانند طراحی واکنش‌گرا، نصب‌پذیری و در صورت پشتیبانی cache آفلاین تجربه‌ای شبیه برنامه ارائه می‌دهد.|synthetic-gpt6-web-v2
+QA|Content Security Policy چیست؟|CSP سیاست امنیتی مبتنی بر header است که منابع مجاز صفحه را محدود می‌کند و می‌تواند سطح حملات تزریق اسکریپت را کاهش دهد.|synthetic-gpt6-web-v2
+QA|XSS چیست؟|Cross-Site Scripting تزریق و اجرای اسکریپت ناخواسته در زمینه اعتماد سایت است؛ خروجی‌گریزی متناسب با context و سیاست‌های امنیتی دفاع‌های مهم‌اند.|synthetic-gpt6-web-v2
+QA|CSRF چیست؟|Cross-Site Request Forgery کاربر احراز هویت‌شده را وادار می‌کند ناخواسته در سایت هدف درخواستی ارسال کند؛ token ضد CSRF و SameSite از دفاع‌های رایج‌اند.|synthetic-gpt6-web-v2
+QA|SQL injection در برنامه وب چگونه رخ می‌دهد؟|SQL injection زمانی رخ می‌دهد که ورودی کنترل‌نشده به‌صورت بخشی از دستور SQL تفسیر شود؛ query پارامتری و جداسازی داده از کد دفاع اصلی‌اند.|synthetic-gpt6-web-v2
+QA|بهینه‌سازی Core Web Vitals چه هدفی دارد؟|Core Web Vitals کیفیت تجربه واقعی بارگذاری، تعامل و پایداری بصری را با معیارهایی مانند LCP، INP و CLS می‌سنجد.|synthetic-gpt6-web-v2
+QA|LCP چیست؟|Largest Contentful Paint زمان نمایش بزرگ‌ترین محتوای قابل مشاهده در viewport را اندازه می‌گیرد و شاخصی از بارگذاری ادراک‌شده است.|synthetic-gpt6-web-v2
+QA|CLS چیست؟|Cumulative Layout Shift جابه‌جایی‌های غیرمنتظره عناصر بصری صفحه را اندازه می‌گیرد و برای پایداری چیدمان کاربرد دارد.|synthetic-gpt6-web-v2
+QA|INP چیست؟|Interaction to Next Paint پاسخ‌گویی صفحه به تعامل‌های کاربر را با اندازه‌گیری تأخیر تعامل‌ها ارزیابی می‌کند.|synthetic-gpt6-web-v2
