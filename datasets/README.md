@@ -24,6 +24,19 @@ The current Sima engine supports only `FACT`, `WORD`, `RULE`, and exact normaliz
 
 These are collection targets, not generated counts. Do not fill quotas with duplicated, templated, or unverified claims. Keep a source manifest for every imported corpus.
 
+
+## GPT-6-generated synthetic seed (2026-11-20)
+
+The repository now includes an original, synthetic expansion authored with GPT-6:
+
+- `generated/gpt6/fa/conversation.sima`: 132 Persian QA records.
+- `generated/gpt6/knowledge/core.sima`: 119 structured FACT records.
+- Total added in this batch: **251 records**.
+
+These records are model-generated examples, **not** OpenAI's private pretraining dataset, a GPT-5.6/Luna dataset, or a dump of model weights or training data. Their source tags identify synthetic provenance. They are an initial curated seed, not a 500K corpus, and generated facts should be independently checked before high-stakes use.
+
+The existing builder discovers `.sima` files recursively under `datasets`, so this batch is included by the documented build command. Keep generated data separate from externally sourced data and preserve the source tags during processing.
+
 ## Build a corpus from licensed sources
 
 The standard-library-only builder validates record syntax, rejects malformed UTF-8 / empty fields, deduplicates exact records, writes deterministic shards, and reports category counts.
