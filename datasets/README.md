@@ -29,14 +29,14 @@ These are collection targets, not generated counts. Do not fill quotas with dupl
 
 The repository contains original synthetic examples authored with GPT-6. A repository-wide recount of the current core and generated structured files reports:
 
-- **1212 raw records** before exact duplicate elimination.
-- **1212 unique exact records** after exact duplicate elimination.
-- FACT: 301; WORD: 201; RULE: 4; QA: 706.
-- Persian and English QA, bilingual technical vocabulary, and structured knowledge spanning science, mathematics, C++, algorithms, language, reasoning, software engineering, computing, networking, and security.
+- **1347 raw records** before exact duplicate elimination.
+- **1347 unique exact records** after exact duplicate elimination.
+- FACT: 301; WORD: 201; RULE: 4; QA: 841.
+- Persian and English QA, bilingual technical vocabulary, and structured knowledge spanning science, mathematics, C++, algorithms, language, reasoning, software engineering, web development, networking, security, operating systems, and databases.
 
 These are model-generated examples, **not** OpenAI's private pretraining dataset, a GPT-5.6/Luna dataset, or a dump of model weights or training data. Source tags identify synthetic provenance. Generated facts are not externally sourced citations and should be independently checked before high-stakes use.
 
-This remains a seed corpus, not the 500K target. The builder performs exact deduplication and validates record structure. A parser-compatible audit of this batch found 0 malformed records and 0 exact duplicate(s) before deduplication. Keep generated data separate from externally sourced data and preserve source tags during processing.
+This remains a seed corpus, not the 500K target. The builder performs exact deduplication and validates record structure. A parser-compatible audit of the current batch found 0 malformed records and 0 exact duplicate(s) before deduplication. Keep generated data separate from externally sourced data and preserve source tags during processing.
 
 ## Build a corpus from licensed sources
 
