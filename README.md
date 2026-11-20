@@ -20,7 +20,7 @@ The first release provides a symbolic foundation: UTF-8 text handling, language-
 - Evidence coverage evaluation and conservative answer composition.
 - Bounded short-term session memory with recent-history and lexical recall APIs.
 - Versioned little-endian binary snapshots, deterministic concept serialization, and transactional validated loading.
-- Console interface, CMake presets, CI workflow, and automated tests.
+- Console interface, CMake presets, installable CMake target, CI workflow, and automated tests.
 
 ## Build
 
@@ -119,9 +119,9 @@ The executable also supports `--help` and `--version`. Default snapshot: `storag
 - `src/`: implementation and console application.
 - `tests/`: deterministic integration tests.
 - `datasets/examples/`: a tiny format demonstration, not a real corpus.
-- `docs/`: architecture, formats, limitations, testing, and security notes.
+- `docs/`: architecture, formats, limitations, testing, security, and API notes.
 
-Read [Architecture](docs/ARCHITECTURE.md), [Dataset format](docs/DATA_FORMAT.md), [Text extraction](docs/TEXT_EXTRACTION.md), [Limitations](docs/LIMITATIONS.md), [Testing](docs/TESTING.md), [Security](docs/SECURITY.md), and [Roadmap](docs/ROADMAP.md).
+Read [Architecture](docs/ARCHITECTURE.md), [Dataset format](docs/DATA_FORMAT.md), [Text extraction](docs/TEXT_EXTRACTION.md), [API](docs/API.md), [Limitations](docs/LIMITATIONS.md), [Testing](docs/TESTING.md), [Security](docs/SECURITY.md), and [Roadmap](docs/ROADMAP.md).
 
 ## Design principles
 
