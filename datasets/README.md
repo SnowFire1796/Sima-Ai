@@ -25,18 +25,16 @@ The current Sima engine supports only `FACT`, `WORD`, `RULE`, and exact normaliz
 These are collection targets, not generated counts. Do not fill quotas with duplicated, templated, or unverified claims. Keep a source manifest for every imported corpus.
 
 
-## GPT-6-generated synthetic seed (2026-11-20)
+## GPT-6-generated synthetic corpus (2026-11-20)
 
-The repository contains original synthetic examples authored with GPT-6. A repository-wide recount of the current core and generated structured files reports:
+The repository contains original synthetic examples authored with GPT-6. The current pre-expansion repository contained **2,296 structured record lines** across its core and generated `.sima` files. The new file `generated/gpt6/fa/concept_definitions_expanded.sima` adds **8,029 QA records**: 259 curated concept definitions, each represented by 31 Persian and English exact-question formulations.
 
-- **1,418 raw records** before exact duplicate elimination.
-- **1,418 unique exact records** after exact duplicate elimination.
-- FACT: 301; WORD: 201; RULE: 4; QA: 912.
-- Persian and English QA, bilingual technical vocabulary, and structured knowledge spanning science, mathematics, C++, algorithms, language, reasoning, software engineering, web development, networking, security, operating systems, databases, compiler construction, and programming paradigms.
+- **10,325 raw structured records** are now present by line-count addition (2,296 existing + 8,029 new).
+- The new expansion alone exceeds the requested 6,000-record milestone.
+- These are raw record counts, not a claim of 10,325 globally unique semantic examples. Run the builder below to calculate exact-record deduplication and validation results.
+- The new expansion is primarily QA, designed for the current exact normalized-question lookup engine. Different formulations for the same concept intentionally share a concise answer; this improves exact phrase coverage but does not provide semantic generalization.
 
-These are model-generated examples, **not** OpenAI's private pretraining dataset, a GPT-5.6/Luna dataset, or a dump of model weights or training data. Source tags identify synthetic provenance. Generated facts are not externally sourced citations and should be independently checked before high-stakes use.
-
-This remains a seed corpus, not the 500K target. The builder performs exact deduplication and validates record structure. The previous parser-compatible audit found no malformed records or exact duplicates; the latest additions contain 71 further QA records across compiler construction and programming paradigms. Keep generated data separate from externally sourced data and preserve source tags during processing.
+These are model-generated examples, **not** OpenAI's private pretraining dataset, a GPT-6 training-data dump, or model weights. Source tags identify synthetic provenance. Generated facts and definitions should be independently checked before high-stakes use. Keep generated data separate from externally sourced data and preserve source tags during processing.
 
 ## Build a corpus from licensed sources
 
