@@ -1,0 +1,163 @@
+# GPT-6 synthetic bilingual vocabulary; alias|canonical English headword.
+WORD|الگوریتم|algorithm
+WORD|داده|data
+WORD|پایگاه داده|database
+WORD|پردازنده|processor
+WORD|حافظه|memory
+WORD|حافظه دسترسی تصادفی|random-access memory
+WORD|حافظه فقط خواندنی|read-only memory
+WORD|ذخیره‌سازی|storage
+WORD|رشته|string
+WORD|عدد صحیح|integer
+WORD|عدد اعشاری|floating-point number
+WORD|متغیر|variable
+WORD|ثابت|constant
+WORD|تابع|function
+WORD|پارامتر|parameter
+WORD|آرگومان|argument
+WORD|بازگشت|recursion
+WORD|حلقه|loop
+WORD|شرط|condition
+WORD|شاخه|branch
+WORD|اشاره‌گر|pointer
+WORD|ارجاع|reference
+WORD|کلاس|class
+WORD|شیء|object
+WORD|وراثت|inheritance
+WORD|چندریختی|polymorphism
+WORD|کپسوله‌سازی|encapsulation
+WORD|انتزاع|abstraction
+WORD|قالب|template
+WORD|کتابخانه|library
+WORD|کامپایلر|compiler
+WORD|مفسر|interpreter
+WORD|پیونددهنده|linker
+WORD|اشکال‌زدایی|debugging
+WORD|آزمون|testing
+WORD|استثنا|exception
+WORD|هم‌روندی|concurrency
+WORD|هم‌زمانی|synchronization
+WORD|نخ اجرایی|thread
+WORD|فرایند|process
+WORD|سیستم‌عامل|operating system
+WORD|هسته سیستم‌عامل|kernel
+WORD|درایور|driver
+WORD|شبکه|network
+WORD|بسته|packet
+WORD|مسیریابی|routing
+WORD|پهنای باند|bandwidth
+WORD|تأخیر|latency
+WORD|توان عملیاتی|throughput
+WORD|پروتکل|protocol
+WORD|درگاه|port
+WORD|نشانی اینترنتی|IP address
+WORD|نام دامنه|domain name
+WORD|سامانه نام دامنه|Domain Name System
+WORD|رمزنگاری|encryption
+WORD|رمزگشایی|decryption
+WORD|امضای دیجیتال|digital signature
+WORD|گواهی دیجیتال|digital certificate
+WORD|احراز هویت|authentication
+WORD|مجوزدهی|authorization
+WORD|آسیب‌پذیری|vulnerability
+WORD|تهدید|threat
+WORD|بهره‌برداری|exploit
+WORD|وصله امنیتی|security patch
+WORD|پشتیبان‌گیری|backup
+WORD|بازیابی|recovery
+WORD|یادگیری ماشین|machine learning
+WORD|یادگیری عمیق|deep learning
+WORD|شبکه عصبی|neural network
+WORD|مدل زبانی|language model
+WORD|توکن|token
+WORD|بردارسازی|embedding
+WORD|شباهت کسینوسی|cosine similarity
+WORD|بازیابی اطلاعات|information retrieval
+WORD|تولید متن|text generation
+WORD|داده مصنوعی|synthetic data
+WORD|منشأ داده|data provenance
+WORD|برچسب|label
+WORD|ویژگی|feature
+WORD|آموزش|training
+WORD|اعتبارسنجی|validation
+WORD|ارزیابی|evaluation
+WORD|بیش‌برازش|overfitting
+WORD|کم‌برازش|underfitting
+WORD|تعمیم|generalization
+WORD|سوگیری|bias
+WORD|واریانس|variance
+WORD|دقت|precision
+WORD|بازیابی|recall
+WORD|صحت|accuracy
+WORD|فراخوان|recall
+WORD|استنتاج|inference
+WORD|پایگاه دانش|knowledge base
+WORD|واقعیت|fact
+WORD|قاعده|rule
+WORD|رابطه|relation
+WORD|مفهوم|concept
+WORD|استدلال|reasoning
+WORD|فرضیه|hypothesis
+WORD|شاهد|evidence
+WORD|نتیجه‌گیری|conclusion
+WORD|همبستگی|correlation
+WORD|علیت|causation
+WORD|متغیر مخدوش‌گر|confounder
+WORD|نمونه‌گیری|sampling
+WORD|جامعه آماری|population
+WORD|نمونه آماری|sample
+WORD|میانگین|mean
+WORD|میانه|median
+WORD|نما|mode
+WORD|انحراف معیار|standard deviation
+WORD|احتمال|probability
+WORD|مشتق|derivative
+WORD|انتگرال|integral
+WORD|بردار|vector
+WORD|ماتریس|matrix
+WORD|دترمینان|determinant
+WORD|نیرو|force
+WORD|انرژی|energy
+WORD|توان|power
+WORD|شتاب|acceleration
+WORD|سرعت|velocity
+WORD|تندی|speed
+WORD|جرم|mass
+WORD|وزن|weight
+WORD|چگالی|density
+WORD|فشار|pressure
+WORD|دما|temperature
+WORD|گرما|heat
+WORD|بازتاب|reflection
+WORD|شکست نور|refraction
+WORD|طول موج|wavelength
+WORD|فرکانس|frequency
+WORD|دامنه|amplitude
+WORD|اتم|atom
+WORD|مولکول|molecule
+WORD|عنصر|element
+WORD|ترکیب|compound
+WORD|پیوند یونی|ionic bond
+WORD|پیوند کووالانسی|covalent bond
+WORD|واکنش شیمیایی|chemical reaction
+WORD|کاتالیزگر|catalyst
+WORD|اسید|acid
+WORD|باز|base
+WORD|محلول|solution
+WORD|غلظت|concentration
+WORD|سلول|cell
+WORD|بافت|tissue
+WORD|اندام|organ
+WORD|ژن|gene
+WORD|کروموزوم|chromosome
+WORD|جهش|mutation
+WORD|فرگشت|evolution
+WORD|تنوع زیستی|biodiversity
+WORD|زیست‌بوم|ecosystem
+WORD|فتوسنتز|photosynthesis
+WORD|تنفس سلولی|cellular respiration
+WORD|چرخه آب|water cycle
+WORD|اقلیم|climate
+WORD|آب‌وهوا|weather
+WORD|انرژی تجدیدپذیر|renewable energy
+WORD|اثر گلخانه‌ای|greenhouse effect
