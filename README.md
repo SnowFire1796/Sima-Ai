@@ -19,16 +19,16 @@ The first release provides a symbolic foundation: UTF-8 text handling, language-
 - Evidence coverage evaluation and conservative answer composition.
 - Bounded short-term session memory with recent-history and lexical recall APIs.
 - Versioned little-endian binary snapshots, deterministic concept serialization, and transactional validated loading.
-- Console interface, CMake build, CI workflow, and automated tests.
+- Console interface, CMake presets, CI workflow, and automated tests.
 
 ## Build
 
 Requirements: CMake 3.25+ and a C++26 compiler.
 
 ```sh
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build -j2
-ctest --test-dir build --output-on-failure
+cmake --preset release
+cmake --build --preset release
+ctest --preset release
 ```
 
 Direct build:
@@ -43,7 +43,7 @@ g++ -std=c++26 -O2 -Wall -Wextra -Wpedantic -Iinclude \
 ## Quick start
 
 ```sh
-./build/sima
+./build/release/sima
 ```
 
 Example session:
@@ -99,7 +99,7 @@ Only a tiny illustrative sample is included. Add your own licensed corpora; data
 | `help` | Show commands |
 | `exit` | Quit |
 
-Default snapshot: `storage/knowledge.sima`.
+The executable also supports `--help` and `--version`. Default snapshot: `storage/knowledge.sima`.
 
 ## Architecture
 
@@ -107,9 +107,9 @@ Default snapshot: `storage/knowledge.sima`.
 - `src/`: implementation and console application.
 - `tests/`: deterministic integration tests.
 - `datasets/examples/`: a tiny format demonstration, not a real corpus.
-- `docs/`: architecture, format, limitations, and roadmap.
+- `docs/`: architecture, format, limitations, testing, and security notes.
 
-Read [Architecture](docs/ARCHITECTURE.md), [Dataset format](docs/DATA_FORMAT.md), [Limitations](docs/LIMITATIONS.md), and [Roadmap](docs/ROADMAP.md).
+Read [Architecture](docs/ARCHITECTURE.md), [Dataset format](docs/DATA_FORMAT.md), [Limitations](docs/LIMITATIONS.md), [Testing](docs/TESTING.md), [Security](docs/SECURITY.md), and [Roadmap](docs/ROADMAP.md).
 
 ## Design principles
 
