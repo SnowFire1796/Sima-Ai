@@ -15,7 +15,7 @@ Current coverage includes:
 - ASCII and Persian character normalization.
 - UTF-8 validation and rejection of malformed dataset lines.
 - Coarse language detection and Persian punctuation tokenization.
-- Concept aliases shared across scripts.
+- Concept aliases shared across scripts and alias-aware retrieval.
 - Fact ingestion, duplicate rejection, and alias-collision handling.
 - English and Persian text-template extraction.
 - Structured Q/A ingestion, normalized duplicate detection, punctuation-normalized lookup, and response persistence.

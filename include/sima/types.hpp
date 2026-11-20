@@ -21,7 +21,7 @@ struct TrainReport {
  std::size_t sentences_seen{0},sentences_extracted{0},sentences_unmatched{0};
  std::vector<Diagnostic> diagnostics;
 };
-struct SearchHit { Fact fact; double score{0}; bool inferred{false}; };
+struct SearchHit { Fact fact; double score{0}; bool inferred{false}; std::vector<std::string> matched_terms; };
 struct Answer { std::string text; std::vector<Fact> evidence; bool sufficient{false}; std::string source; };
 struct KnowledgeStats { std::size_t concepts{0},facts{0},rules{0},responses{0},indexed_terms{0}; };
 }

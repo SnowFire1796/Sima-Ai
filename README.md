@@ -17,8 +17,8 @@ The first release provides a symbolic foundation: UTF-8 text handling, language-
 - Recursive directory training for `.sima` and `.txt` datasets.
 - Rule-based English and Persian sentence templates for common relations.
 - Exact normalized-question lookup for stored Q/A pairs.
+- Alias-aware inverted retrieval with deterministic result ordering.
 - Explicit transitive inference rules and evidence-path explanations.
-- Inverted retrieval index with deterministic result ordering.
 - Evidence coverage evaluation and conservative answer composition.
 - Bounded short-term session memory with recent-history and lexical recall APIs.
 - Versioned little-endian binary snapshots, deterministic concept serialization, and transactional validated loading.
@@ -55,7 +55,7 @@ Example session:
 train datasets/examples
 stats
 ask Earth IsA
-query planet sun
+query سگ
 query What is the capital of France?
 infer
 why Dog IsA Animal
@@ -75,7 +75,7 @@ Structured records:
 ```text
 FACT|Earth|IsA|Planet
 FACT|Earth|Orbits|Sun|astronomy-corpus
-WORD|زمین|Earth
+WORD|سگ|Dog
 WORD|سیاره|Planet
 RULE|IsA|TRANSITIVE
 QA|What is the capital of France?|Paris|world-atlas
