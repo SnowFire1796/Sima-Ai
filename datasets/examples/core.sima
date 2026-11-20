@@ -1,0 +1,13 @@
+# Tiny format demonstration; not a training corpus.
+FACT|Earth|IsA|Planet|example
+FACT|Earth|Orbits|Sun|example
+FACT|Sun|IsA|Star|example
+FACT|Dog|IsA|Mammal|example
+FACT|Mammal|IsA|Animal|example
+WORD|زمین|Earth
+WORD|سیاره|Planet
+WORD|خورشید|Sun
+WORD|سگ|Dog
+WORD|پستاندار|Mammal
+WORD|حیوان|Animal
+RULE|IsA|TRANSITIVE

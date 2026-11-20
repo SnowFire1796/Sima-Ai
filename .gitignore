@@ -1,0 +1,6 @@
+/build/
+/cmake-build-*/
+*.dat
+*.idx
+*.tmp
+*.log
